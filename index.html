@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Playstation</title>
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=JtRYpjtdhzhs&format=png&color=61A4FF">
+    <link rel="stylesheet" href="./src/output.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <section>
+        <nav class="w-full shadow-md bg-blue-700 text-white fixed z-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center gap-2">
+                        <img src="https://img.icons8.com/?size=40&id=JtRYpjtdhzhs&format=png&color=BBD8FF" alt="Logo" />
+                        <a href="#home" class="font-bold text-xl text-white">Playstation</a>
+                    </div>
+                    <div class="hidden md:flex gap-8 items-center">
+                        <a href="#home" class="text-white font-medium hover:text-gray-300 hover:underline">Home</a>
+                        <a href="#about" class="text-white font-medium hover:text-gray-300 hover:underline">About</a>
+                        <a href="#contact"
+                            class="text-white font-medium hover:text-gray-300 hover:underline">Contact</a>
+                        <a href="#collection"
+                            class="text-white font-medium hover:text-gray-300 hover:underline">Collection</a>
+                        <a href="ps.html"
+                            class="text-white font-medium hover:text-gray-300 hover:underline">Playstation</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <button class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-4 py-1 rounded-md"
+                            onclick="window.location.href='login.html'">Login</button>
+                        <button class="bg-indigo-400 hover:bg-sky-600 text-white font-bold px-4 py-1 rounded-md"
+                            onclick="signup()">Sign Up</button>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="menuBtn" class="text-white focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobileMenu" class="hidden flex-col gap-4 pb-4 md:hidden">
+                    <a href="#home" class="text-white font-medium ">Home</a>
+                    <a href="#about" class="text-white font-medium">About</a>
+                    <a href="#contact" class="text-white font-medium">Contact</a>
+                    <a href="#collection" class="text-white font-medium">Collection</a>
+                    <a href="ps.html" class="text-white font-medium">Playstation</a>
+                    <button class="bg-sky-500 text-white font-bold px-4 py-1 rounded-md"
+                        href="login.html">Login</button>
+                    <button class="bg-indigo-400 hover:bg-sky-600 text-white font-bold px-4 py-1 rounded-md"
+                        onclick="signup()">Sign
+                        Up</button>
+                </div>
+            </div>
+        </nav>
+        <div id="daftar" class="modal">
+            <div class="modal-content">
+                <div class="flex justify-end">
+                    <span class="close text-[26px] font-bold cursor-pointer hover:text-red-500"
+                        onclick="closeModal()">&times;</span>
+                </div>
+                <h1 class="font-bold text-xl text-center mb-4">Daftar</h1>
+                <label class="block mb-2 font-medium">Nama Lengkap</label>
+                <input class="w-full border rounded-md p-2 mb-4" placeholder="Alamat Email" type="email" />
+                <label class="block mb-2 font-medium">Alamat Email</label>
+                <input class="w-full border rounded-md p-2 mb-4" placeholder="Alamat Email" type="email" />
+
+                <label class="block mb-2 font-medium">Password</label>
+                <input class="w-full border rounded-md p-2 mb-4" placeholder="Password" type="password" />
+                <button class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition mb-4"
+                    onclick="window.location.href='index.html'">Masuk</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content 1 -->
+    <section id="home" class="bg-gradient-to-b from-blue-700 via-blue-600 to-white py-12 pt-30">
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-10">
+            <div class="text-white text-center md:text-left max-w-lg">
+                <h1 class="text-3xl sm:text-4xl font-bold mb-4">Rental PlayStation</h1>
+                <p class="mb-4 text-gray-300">Mainkan game favoritmu dengan konsol terbaru, harga terjangkau,<br
+                        class="hidden sm:block"> dan layanan terbaik!</p>
+                <button class="bg-black px-7 py-2 text-white rounded-md hover:bg-gray-600/100">Lihat Katalog</button>
+            </div>
+            <div>
+                <img src="./assets/Ps 5.jpeg" alt="PlayStation 5"
+                    class="rounded-xl w-full max-w-xs sm:max-w-sm md:max-w-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Content 2 -->
+    <section class="bg-white py-6">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="border border-gray-200 rounded bg-white px-5 py-3 shadow-xl">
+                    <div class="flex items-center mb-2">
+                        <img src="./assets/user.png" class="w-[40px] h-[40px]" />
+                        <div class="ml-3">
+                            <strong>Century</strong>
+                        </div>
+                    </div>
+                    <div class="h-[70px] overflow-y-auto">
+                        <p>Luar Biasa, Rental disini tempatnya bagus, nyaman dan juga pelayanan baik.</p>
+                    </div>
+                    <div class="flex">
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAt1JREFUSEu9lF9olXUYxz/f95y1mTYxFJGobe9ZMfyzd4rd1ZXD8EIipD/QjRcVJFgXraKLcoh4KRFY1FWT/lwUwSqRMq9EopDaeTNS3HnVagYuEIlsi3PO1+09x+ncOds7EH/wwu993+d5Ps9/cQeO7gCDRUFcLKzHfEPg19SbfJzVwUVCws9BO8CX6E3ukyhnAWWGuNjRBblRUFA3vFNRaej2QuLCO5jd2BWkHDhWlES3DeL4gRVU82NIS4Bh7K3pPahu1YZzRxcCZUqXi+EboP2pMftDxH+gF7G/VV/y2KIgPsVdBF1rqGgVFd+LgjVQXQUaAK2uGxsizz7KnK29exA8hjyeNkQuP06bx1VIrlyHz0TikcL7iBcW8goYUlTa6ZHwC6Qnmsv7F3LJZq3n/xuQYvglaHt2SPc6gupToBWY5ZA+m4D76zb+oL3ykLrOT9wEWb0Ulh4BPboAKI3kVhkXwy2Yr2rN4TMw2a9o7M9puVmF99nuVq5WD4O2zAOaA3Hc+TjV3GeIFuB7lnlbw5pcN+qTtNBSGAa2NQHNgjgOn8Ucqg/pMHfraT04OnmzbsMWtskTh5+AnmwAmoG42LEJcidBwj5IlOyevt2q03RO0hyj7+aFnF55DxPtl9MNEJTXasOF3xpFPx9kz1TJBuco2SdYXu2f7pp0Sorh8SlnHsF+RX3JgcVCjoL6G9fFZ3CwQ32jv3qk8CZiL/iYoqShfLOaBMThv6C2eYZtAvtV8vqBin5MF2d5ol2bL17NVBOPdGxE+Z/mAnxp6tsg1vOIjfVddhilEbdib1df8nU2SDF8GfT2LGH7I4LyS+r9/bJNjrjrdQjeSo3PHL+nKNmVFfIp6Jmap1wk4Dn1lo7MmfK4s4dqcAjp4fq/kqJSd1bIu7VVzge0XRlQz9//NKuNjYgLA8A+8DlFSU82SE1xnaLSqQX22I1E/dzZSasntfbCX5kgWQ1nlbsGOeoaKZaCU1kAAAAASUVORK5CYII=" />
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded bg-white px-5 py-3 shadow-xl">
+                    <div class="flex items-center mb-2">
+                        <img src="./assets/user.png" class="w-[40px] h-[40px]" />
+                        <div class="ml-3">
+                            <strong>Mufti</strong>
+                        </div>
+                    </div>
+                    <div class="h-[70px] overflow-y-auto">
+                        <p>Pelayanan cepat dan ramah. Tempatnya juga bersih dan nyaman banget.</p>
+                    </div>
+                    <div class="flex">
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded bg-white px-5 py-3 shadow-xl">
+                    <div class="flex items-center mb-2">
+                        <img src="./assets/user.png" class="w-[40px] h-[40px]" />
+                        <div class="ml-3">
+                            <strong>Fabio</strong>
+                        </div>
+                    </div>
+                    <div class="h-[70px] overflow-y-auto">
+                        <p>Rekomendasi banget buat yang cari rental PS. Banyak pilihan gamenya.</p>
+                    </div>
+                    <div class="flex">
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                        <img class="h-[20px] w-[20px]"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAjpJREFUSEu91E9IFHEYxvHvM6tpGkEHkwhy/yhYLTsWduykIELUoUMdO1SHiiKQiqDyEh0iCDpIx6Lo4kUkJKtzlyJ3i0ByZ0vUQIkoULJ03jI0/+22vw1xr7/nfT4z886sWIef1sGgJMTSiSTGEzy7oFTw0PUCS0Ti3aDDYOOkgu0SMy6QM2LpuhhEhkDefPEx+dl7a4sMJO4gziyW2qD8oHHNEMvs2EJYNoq0cVmphW1qyvUXg5wel6Vjl8G7vqrMrF9NQVtJiL1lA15sG7OqwdiKqQbCGlAHqDZ/mXWCjSKbQJEJPMaptAklgq8L+b93YgOJu4iTxa7K/dzeEAmaleTHEiTei3TAvaRocoQq1athaHoRSddWQ3UfaH/R8aIBG4TpVvmjI3PRZYu39/UVTIWPQS1FewoHXrDJ2vPuZGHGXlJOeaIHaP8PqIcqHZl7REtn877CZpSRSXQDh9wh6yIVnJawlTMFvxNLx1tAz5yRyM/dSg6/y5f/F3Lt98o6nRELO9SUu1Uq8hTU6oxgz+UHefOFduKRiU+CKp0Rs1lmvm9W89iU004sXbcXyl7lAT6DXcF0ArFn9Xl4UH6u1xGJnwPdXv6Paw/wZs4qNfzFjAiZ2EXwrgIViznrkh+cckUegY7+CRtjeBxXKtu3ctgy0UZC7z7SvvmzrPxsvSOSuAl0gHVR5V1Sw9C3QrsxQ6Tj55FugAXyg51uSC5aySSNSn4YcF28vY5GqbBp7fr4yQlxLXbN/QLS7MQak8tavwAAAABJRU5ErkJggg==" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-gradient-to-t from-blue-200 via-blue-100 to-white py-12 pt-20">
+        <div class="grid grid-cols-7">
+            <div class="col-span-7 mb-10">
+                <h1 class="text-3xl font-bold text-center">Tentang Rental Playstation</h1>
+            </div>
+            <div class="col-start-2 col-span-5 flex-row gap-10 items-center md:flex">
+                <img src="./assets/interior.jpeg" class="md:w-[40%] rounded-xl">
+                <div class="space-y-4 text-lg">
+                    <p>Selamat datang di <strong class="text-blue-500">PS Rental Zone</strong>, tempat di mana para
+                        gamer berkumpul untuk menikmati koleksi game PlayStation terbaru dan terpopuler dalam suasana
+                        yang nyaman dan modern.</p>
+                    <p>Kami berdedikasi untuk menyediakan pengalaman bermain game yang imersif dengan fasilitas terbaik,
+                        mulai dari konsol PS5 terbaru, TV berkualitas tinggi, hingga kursi gaming ergonomis yang akan
+                        membuat sesi bermainmu semakin menyenangkan.</p>
+                    <p>Lebih dari sekadar tempat rental, kami adalah komunitas. Kami percaya bahwa gaming adalah tentang
+                        kesenangan, persahabatan, dan petualangan. Bergabunglah dengan kami dan rasakan bedanya!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Content 4 -->
+    <section class="py-12">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8 text-blue-700">Kenapa Harus Rental di RPS?</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="border border-gray-200 rounded bg-white px-5 py-3 shadow-md text-center hover:border-blue-300 hover:border-dashed hover:border-3">
+                    <i class="fas fa-gamepad text-blue-500 text-[3rem] text-center"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-500">Koleksi Game Lengkap</h3>
+                    <p class="text-gray-600">Dari rilisan terbaru hingga game klasik favorit, kami punya semuanya!</p>
+                </div>
+                <div
+                    class="border border-gray-200 rounded bg-white px-5 py-3 shadow-md text-center hover:border-blue-300 hover:border-dashed hover:border-3">
+                    <i class="fas fa-couch text-blue-500 text-[3rem] text-center"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-500">Ruangan Nyaman & Stylish</h3>
+                    <p class="text-gray-600">Desain ruangan modern dengan tema hitam dan pink yang memanjakan mata.</p>
+                </div>
+                <div
+                    class="border border-gray-200 rounded bg-white px-5 py-3 shadow-md text-center hover:border-blue-300 hover:border-dashed hover:border-3">
+                    <i class="fas fa-star text-blue-500 text-[3rem] text-center"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-500">Pengalaman VIP Eksklusif</h3>
+                    <p class="text-gray-600">Nikmati fasilitas premium dan layanan terbaik di VIP Room kami.</p>
+                </div>
+                <div class="flex items-center justify-center sm:col-span-2 lg:col-span-3">
+                    <button class="border rounded-xl bg-blue-500 text-white px-5 py-2 cursor-pointer hover:bg-blue-800"
+                        onclick="window.location.href='ps.html'">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content 5 -->
+    <section id="collection" class="pt-10">
+        <div>
+            <h1 class="text-center font-bold text-3xl py-10">Collection Games</h1>
+        </div>
+        <div class="grid grid-cols-7">
+            <div class="col-start-2 col-span-5">
+                <div class="relative flex justify-center items-center">
+                    <img src="assets/fifa23.jpg" class="w-full h-auto object-cover rounded-xl" id="mainImage" />
+                    <img src="assets/gow.jpg" class="w-full h-auto object-cover rounded-xl hidden" id="mainImage1" />
+                    <img src="assets/acsr.jpg" class="w-full h-auto object-cover rounded-xl hidden" id="mainImage2" />
+                    <div
+                        class="absolute left-0 w-[50px] h-full flex items-center justify-center rounded-l-xl hover:bg-black opacity-50 md:w-[100px]">
+                        <img src="assets/back.png" class="w-[60%] md:w-[50%]" id="btnback" />
+                    </div>
+                    <div
+                        class="absolute right-0 w-[50px] h-full flex items-center justify-center rounded-r-xl hover:bg-black opacity-50 md:w-[100px]">
+                        <img src="assets/next.png" class="w-[60%] md:w-[50%]" id="btnnext" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full">
+        <h1 class="text-center py-8 font-bold text-xl">Streaming Film</h1>
+        <div class="grid grid-cols-7 gap-4 items-center">
+            <div class="col-start-2 flex justify-center items-center">
+                <img src="assets/amazprime.png">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="assets/netflix.png">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="assets/iqiyi.png">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="assets/hbo.png">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="assets/disney.png">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-10 bg-blue-100 mt-8">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8 text-blue-700">Kenapa Harus Rental di RPS?</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="px-5 py-3 text-center">
+                    <i class="fas fa-map-marker-alt text-5xl mb-4 text-blue-500 text-[3rem] text-center"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-500">Alamat Kami</h3>
+                    <p class="text-gray-600">Jl. Gamer No. 123, Kota Anda</p>
+                </div>
+                <div
+                    class="px-5 py-3 text-center">
+                    <i class="fas fa-phone text-blue-500 text-[3rem] text-center"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-500">Telepon</h3>
+                    <p class="text-gray-600">+62 812 4525 123</p>
+                </div>
+                <div
+                    class="px-5 py-3 text-center">
+                    <i class="fas fa-envelope text-blue-500 text-[3rem] text-center"></i>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-500">Email</h3>
+                    <p class="text-gray-600">Rentalplaystation@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <footer class="text-black py-8">
+        <div class="mx-auto px-4 text-center">
+            <p class="mb-2 text-lg">&copy; 2024 PS Room Rental. All rights reserved.</p>
+            <p class="text-sm">Your Ultimate Gaming Destination!</p>
+        </div>
+    </footer>
+    </section>
+
+    <script>
+        function signup() {
+            document.getElementById("daftar").style.display = "block";
+        }
+
+
+        function closeModal() {
+            document.getElementById("daftar").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById("daftar");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        const images = [
+            document.getElementById('mainImage'),
+            document.getElementById('mainImage1'),
+            document.getElementById('mainImage2')
+        ];
+
+        const btnBack = document.getElementById('btnback');
+        const btnNext = document.getElementById('btnnext');
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('hidden', i !== index);
+            });
+        }
+
+        btnNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+
+        btnBack.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+    </script>
+
+</body>
+
+</html>
